@@ -1,0 +1,40 @@
+{
+  "manifest_version": 2,
+  "name": "Top Tokens",
+  "version": "0.1",
+  "description": "Top ETH Tokens",
+  "browser_action": {
+      "default_icon": {
+        "16": "assets/icons/16.png",
+        "32": "assets/icons/32.png",
+        "48": "assets/icons/48.png",
+        "128": "assets/icons/128.png"
+      },
+      "default_title": "Top Tokens",
+      "default_popup": "html/popup.html"
+  },
+  "icons": {
+    "16": "assets/icons/16.png",
+    "32": "assets/icons/32.png",
+    "48": "assets/icons/48.png",
+    "128": "assets/icons/128.png"
+  },
+  "author": "@guilly",
+  "background": {
+      "scripts": [
+        "html/background.js"
+      ],
+      "persistent": true
+
+  },
+  "web_accessible_resources": [
+    "html/api.js",
+    "html/firefox.js"
+  ],
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "minimum_chrome_version": "60",
+  "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.google.com https://www.gstatic.com; object-src 'self' https://www.google.com https://www.gstatic.com "
+}
