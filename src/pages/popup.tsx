@@ -1,5 +1,5 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import * as React from 'react'
+import * as ReactDOM from 'react-dom'
 import {Provider} from 'react-redux'
 import {Store} from 'react-chrome-redux'
 import {TOKENS} from './constants'
@@ -13,7 +13,7 @@ const store = new Store({
 })
 
 store.ready().then(() => {
-  const mountNode = document.createElement('div')
+  const mountNode = document.createElement('div') as HTMLElement
   document.body.appendChild(mountNode)
 
   ReactDOM.render(

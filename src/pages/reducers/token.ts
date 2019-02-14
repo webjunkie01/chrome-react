@@ -5,8 +5,18 @@ import {
   FETCH_ERROR,
 
 } from '../constants'
+import { Reducer } from 'redux';
 
-const initialState = {
+
+export interface TokenState {
+  requesting?: boolean,
+  successful?: boolean,
+  messages?: [],
+  errors?: [],
+  tokens: []
+}
+
+const initialState: TokenState = {
   requesting: false,
   successful: false,
   messages: [],
@@ -14,7 +24,7 @@ const initialState = {
   tokens: [],
 }
 
-const reducer = function loginReducer(state = initialState, action) {
+const reducer: Reducer<TokenState> = function loginReducer(state: TokenState = initialState, action) {
     switch (action.type) {
       case FETCH_TOKENS:
         return {
@@ -44,3 +54,4 @@ const reducer = function loginReducer(state = initialState, action) {
   }
 
 export default reducer
+

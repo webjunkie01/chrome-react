@@ -3,9 +3,9 @@ import { wrapStore, alias } from 'react-chrome-redux'
 import { createLogger } from 'redux-logger'
 import createSagaMiddleware from 'redux-saga';
 import {combineReducers, createStore, compose, applyMiddleware } from 'redux';
-import {IndexReducer} from './reducers'
-import IndexSagas from './sagas'
-import {TOKENS} from './constants'
+import {IndexReducer} from './reducers/index'
+import IndexSagas from './sagas/index'
+import {TOKENS} from './constants/index'
 
 
 const middlewares = []

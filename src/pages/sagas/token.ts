@@ -6,6 +6,7 @@ import {SET_DATA,FETCH_ERROR,FETCH_TOKENS, FETCH_SUCCESS} from '../constants'
 const topTokensURL = `${process.env.REACT_APP_API_URL}/getTop?apiKey=${process.env.REACT_APP_API_KEY}&limit=10`
 
 
+
 function loadTopTokensAPI() {
     return fetch(topTokensURL, {
         method: 'GET',
@@ -13,10 +14,10 @@ function loadTopTokensAPI() {
       })
     .then(handleApiErrors)
     .then(response => response.json())
-    .then(function(res){
+    .then(function(res:any){
         if (res.status === "error") {
             var error = new Error(res.message)
-            error.response = res.message
+            //error.response = res.message
             throw error
         }
         return res
@@ -41,4 +42,5 @@ function* tokensWatcher(){
 }
 
 export default tokensWatcher
+
 
